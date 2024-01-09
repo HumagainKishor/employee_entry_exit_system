@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example.employee_registration";
+option java_outer_classname = "Employee_entry_exit_system";
+option objc_class_prefix = "HLW";
+
+package org.example;
+
+service EmployeeRegistrationService{
+  rpc employeeRegister(EmployeeRegistrationRequest) returns (RegisterResponse){}
+}
+message EmployeeRegistrationRequest{
+  string name = 2;
+  string address = 3;
+}
+message RegisterResponse{
+  string empId = 1;
+  string name = 2;
+  string address = 3;
+}

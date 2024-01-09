@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example.employee_attendance";
+option java_outer_classname = "Employee_entry_exit_system";
+option objc_class_prefix = "HLW";
+
+package org.example;
+
+service EmployeeAttendance{
+  rpc checkIn(EmployeeRequest) returns (ResponseCheckIn){}
+  rpc checkOut(EmployeeRequest) returns (ResponseCheckOut){}
+}
+
+message EmployeeRequest{
+  string empId = 1;
+}
+message ResponseCheckIn{
+  string empId = 1;
+  string checkIn = 2;
+}
+
+message ResponseCheckOut{
+  string empId = 1;
+  string checkOut =2;
+}

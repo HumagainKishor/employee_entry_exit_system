@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: employee_entry_exit_system
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/grpc
+    driverClassName: org.postgresql.Driver
+    username: sudo_kishor
+    password: ronaldo
+cassandra:
+  default:
+    basic:
+      load-balancing-policy:
+        local-datacenter: datacenter1
+      session-name: defaultSession
+      contact-points:
+      - localhost:9042
+    advanced:
+      control-connection:
+        schema-agreement:
+          timeout: 20
+      ssl-engine-factory: DefaultSslEngineFactory
+test-resources:
+  containers:
+    cassandra:
+      startup-timeout: 600s
+      image-name: cassandra
+      exposed-ports:
+      - cassandra.port: 9042
+

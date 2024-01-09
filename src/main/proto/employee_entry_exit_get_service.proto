@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example.employee_detail";
+option java_outer_classname = "Employee_entry_exit_system";
+option objc_class_prefix = "HLW";
+
+package org.example;
+
+service EmployeeDetail{
+  rpc getEmployeeById(Request) returns (EmployeeList){}
+  rpc getAllEmployee(Empty) returns (EmployeeList){}
+}
+message Request{
+  string empId = 1;
+}
+message Reply{
+  string empId = 1;
+  string name = 2;
+  string address = 3;
+  optional string checkInTime = 4;
+  optional string checkOutTime = 5;
+  optional string date = 6;
+}
+
+message Empty{}
+
+message EmployeeList {
+  repeated Reply employees = 1;
+}
