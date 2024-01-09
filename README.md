@@ -5,6 +5,7 @@
 - Admin can view employee details with employee Id and can view all employee details.
 
 ## Technology Used
+- Java
 - gRpc 
 - Micronaut
 - ScyllaDb
